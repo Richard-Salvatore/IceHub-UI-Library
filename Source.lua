@@ -484,7 +484,7 @@ function IceHub.CreateMain(gameName, subtitle)
                     cmd = "INVITE_BROWSER",
                     nonce = HttpService:GenerateGUID(false),
                     args = {
-                        code = "5jHsbnWzMH"
+                        code = ""
                     }
                 }
                 requestData.Body = HttpService:JSONEncode(inviteData)
@@ -586,7 +586,7 @@ function IceHub.CreateMain(gameName, subtitle)
             notifyShadow:Destroy()
         end)
         spawn(function()
-            setclipboard("https://discord.com/invite/K5eqZsAz")
+            setclipboard("https://discord.com/invite/")
         end)
     end)
     discordCorner.CornerRadius = UDim.new(0, 4)
