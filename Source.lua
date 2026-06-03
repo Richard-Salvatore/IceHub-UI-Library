@@ -458,7 +458,7 @@ function IceHub.CreateMain(gameName, subtitle)
                     cmd = "INVITE_BROWSER",
                     nonce = HttpService:GenerateGUID(false),
                     args = {
-                        code = "5jHsbnWzMH"
+                        code = ""
                     }
                 }
                 requestData.Body = HttpService:JSONEncode(inviteData)
@@ -560,7 +560,7 @@ function IceHub.CreateMain(gameName, subtitle)
             notifyShadow:Destroy()
         end)
         spawn(function()
-            setclipboard("https://discord.com/invite/K5eqZsAz")
+            setclipboard("https://discord.com/invite/")
         end)
     end)
     discordCorner.CornerRadius = UDim.new(0, 4)
@@ -3031,5 +3031,138 @@ function IceHub.CreateMain(gameName, subtitle)
             }
         end
     }
+end
+function IceHub:Notify(settings)
+    local title = settings.Title or ""
+    local content = settings.Content or ""
+    local duration = settings.Duration or 4
+    
+    local iceHubGui = game.CoreGui:FindFirstChild("IceHub")
+    local targetFolder = iceHubGui and iceHubGui:FindFirstChild("NotifyFolder")
+    
+    if not targetFolder then
+        if not iceHubGui then
+            iceHubGui = Instance.new("ScreenGui")
+            iceHubGui.Name = "IceHub"
+            iceHubGui.Parent = game.CoreGui
+            iceHubGui.ResetOnSpawn = false
+        end
+        targetFolder = iceHubGui:FindFirstChild("NotifyFolder") or Instance.new("Folder")
+        targetFolder.Name = "NotifyFolder"
+        targetFolder.Parent = iceHubGui
+    end
+    
+    task.spawn(function()
+        local notifyShadow = Instance.new("ImageLabel")
+        local notifyFrame = Instance.new("Frame")
+        local notifyFrameCorner = Instance.new("UICorner")
+        local notifyText = Instance.new("TextLabel")
+        local timerBar = Instance.new("Frame")
+        local timerBarCorner = Instance.new("UICorner")
+        local patternImage = Instance.new("ImageLabel")
+        local notifyStroke = Instance.new("UIStroke")
+        local belowTimerBar = Instance.new("Frame")
+        local belowTimerBarCorner = Instance.new("UICorner")
+        
+        notifyShadow.Name = "NotifyShadow"
+        notifyShadow.Parent = targetFolder
+        notifyShadow.AnchorPoint = Vector2.new(1, 1)
+        notifyShadow.BackgroundTransparency = 1
+        notifyShadow.BorderSizePixel = 0
+        notifyShadow.Position = UDim2.new(3, 0, 1, 0)
+        notifyShadow.Size = UDim2.new(0, 278, 0, 123)
+        notifyShadow.ZIndex = -3
+        notifyShadow.Image = "rbxassetid://6014261993"
+        notifyShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+        notifyShadow.ImageTransparency = 0.5
+        notifyShadow.ScaleType = Enum.ScaleType.Slice
+        notifyShadow.SliceCenter = Rect.new(49, 49, 450, 450)
+        
+        notifyFrame.Name = "Notify"
+        notifyFrame.Parent = notifyShadow
+        notifyFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+        notifyFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+        notifyFrame.BackgroundTransparency = 0.15
+        notifyFrame.BorderColor3 = Color3.fromRGB(25, 25, 25)
+        notifyFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+        notifyFrame.Size = UDim2.new(0, 225, 0, 75)
+        notifyFrameCorner.CornerRadius = UDim.new(0, 4)
+        notifyFrameCorner.Parent = notifyFrame
+        
+        notifyText.Name = "NotifyText"
+        notifyText.Parent = notifyFrame
+        notifyText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        notifyText.BackgroundTransparency = 1
+        notifyText.Position = UDim2.new(0.0622222237, 0, 0.106666669, 0)
+        notifyText.Size = UDim2.new(0, 196, 0, 57)
+        notifyText.Font = Enum.Font.Gotham
+        notifyText.RichText = true
+        
+        if title ~= "" then
+            notifyText.Text = "<b>" .. tostring(title) .. "</b>\n" .. tostring(content)
+        else
+            notifyText.Text = tostring(content)
+        end
+        
+        notifyText.TextColor3 = Color3.fromRGB(255, 255, 255)
+        notifyText.TextSize = 13
+        notifyText.TextWrapped = true
+        notifyText.TextXAlignment = Enum.TextXAlignment.Left
+        notifyText.TextYAlignment = Enum.TextYAlignment.Top
+        
+        timerBar.Name = "TimerBar"
+        timerBar.Parent = notifyFrame
+        timerBar.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+        timerBar.BorderColor3 = Color3.fromRGB(0, 203, 203)
+        timerBar.Position = UDim2.new(0.014, 0, 0.906666696, 0)
+        timerBar.Size = UDim2.new(0, 219, 0, 4)
+        timerBar.ZIndex = 2
+        timerBarCorner.Parent = timerBar
+        
+        patternImage.Name = "Pattern"
+        patternImage.Parent = notifyFrame
+        patternImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        patternImage.BackgroundTransparency = 1
+        patternImage.Size = UDim2.new(0, 224, 0, 72)
+        patternImage.ZIndex = -1
+        patternImage.Image = "rbxassetid://2151741365"
+        patternImage.ImageTransparency = 0.8
+        patternImage.ScaleType = Enum.ScaleType.Tile
+        patternImage.SliceCenter = Rect.new(0, 256, 0, 256)
+        patternImage.TileSize = UDim2.new(0, 250, 0, 250)
+        
+        notifyStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+        notifyStroke.Color = Color3.fromRGB(62, 62, 62)
+        notifyStroke.Transparency = 0.2
+        notifyStroke.Parent = notifyFrame
+        
+        belowTimerBar.Name = "BelowTimeBar"
+        belowTimerBar.Parent = notifyFrame
+        belowTimerBar.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+        belowTimerBar.BorderColor3 = Color3.fromRGB(67, 67, 67)
+        belowTimerBar.AnchorPoint = Vector2.new(0.5, 0)
+        belowTimerBar.Position = UDim2.new(0.5, 0, 0.906666696, 0)
+        belowTimerBar.Size = UDim2.new(0, 219, 0, 4)
+        belowTimerBarCorner.CornerRadius = UDim.new(0, 4)
+        belowTimerBarCorner.Parent = belowTimerBar
+        
+        local tweenService = game:GetService("TweenService")
+        tweenService:Create(notifyShadow, TweenInfo.new(0.5), {
+            Position = UDim2.new(1, 0, 1, 0)
+        }):Play()
+        tweenService:Create(timerBar, TweenInfo.new(tonumber(duration), Enum.EasingStyle.Linear), {
+            Size = UDim2.new(0, 0, 0, 4)
+        }):Play()
+        
+        task.wait(tonumber(duration) - 0.1)
+        timerBar:Destroy()
+        task.wait(0.09)
+        
+        tweenService:Create(notifyShadow, TweenInfo.new(0.5), {
+            Position = UDim2.new(2, 0, 1, 0)
+        }):Play()
+        task.wait(0.6)
+        notifyShadow:Destroy()
+    end)
 end
 return IceHub
