@@ -484,7 +484,7 @@ function IceHub.CreateMain(gameName, subtitle)
                     cmd = "INVITE_BROWSER",
                     nonce = HttpService:GenerateGUID(false),
                     args = {
-                        code = ""
+                        code = "5jHsbnWzMH"
                     }
                 }
                 requestData.Body = HttpService:JSONEncode(inviteData)
@@ -586,7 +586,7 @@ function IceHub.CreateMain(gameName, subtitle)
             notifyShadow:Destroy()
         end)
         spawn(function()
-            setclipboard("https://discord.com/invite/")
+            setclipboard("https://discord.com/invite/K5eqZsAz")
         end)
     end)
     discordCorner.CornerRadius = UDim.new(0, 4)
@@ -639,7 +639,7 @@ function IceHub.CreateMain(gameName, subtitle)
     iceStroke.Color = Color3.fromRGB(39, 39, 39)
     iceStroke.Thickness = 0.8
     iceStroke.Parent = Ice
-    Developer.Name = "Developer"
+    Developer.Name = ""
     Developer.Parent = Ice
     Developer.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     Developer.BackgroundTransparency = 1
@@ -647,24 +647,24 @@ function IceHub.CreateMain(gameName, subtitle)
     Developer.Position = UDim2.new(0.245614037, 0, 0.0866539478, 0)
     Developer.Size = UDim2.new(0, 145, 0, 30)
     Developer.Font = Enum.Font.Gotham
-    Developer.Text = "Ice, Creator"
+    Developer.Text = ""
     Developer.TextColor3 = Color3.fromRGB(255, 255, 255)
     Developer.TextSize = 14
     Developer.TextWrapped = true
     developerCorner.CornerRadius = UDim.new(0, 4)
     developerCorner.Parent = Developer
-    Developers.Name = "Developers"
+    Developers.Name = ""
     Developers.Parent = Credits
     Developers.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
     Developers.BackgroundTransparency = 1
     Developers.Position = UDim2.new(0, 0, 0.00437349873, 0)
     Developers.Size = UDim2.new(0, 285, 0, 20)
     Developers.Font = Enum.Font.Gotham
-    Developers.Text = "Developers"
+    Developers.Text = ""
     Developers.TextColor3 = Color3.fromRGB(129, 129, 129)
     Developers.TextSize = 15
     Developers.TextYAlignment = Enum.TextYAlignment.Top
-    HexR.Name = "HexR"
+    HexR.Name = ""
     HexR.Parent = Credits
     HexR.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     HexR.BackgroundTransparency = 0.4
@@ -673,7 +673,7 @@ function IceHub.CreateMain(gameName, subtitle)
     HexR.Size = UDim2.new(0, 285, 0, 107)
     hexrCorner.CornerRadius = UDim.new(0, 4)
     hexrCorner.Parent = HexR
-    description2.Name = "Description"
+    description2.Name = ""
     description2.Parent = HexR
     description2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     description2.BackgroundTransparency = 1
@@ -681,7 +681,7 @@ function IceHub.CreateMain(gameName, subtitle)
     description2.Position = UDim2.new(0.424561411, 0, 0.744000077, 0)
     description2.Size = UDim2.new(0, 150, 0, 19)
     description2.Font = Enum.Font.SourceSans
-    description2.Text = "Discord: xyz.hexr"
+    description2.Text = ""
     description2.TextColor3 = Color3.fromRGB(255, 255, 255)
     description2.TextSize = 16
     description2.TextWrapped = true
@@ -691,7 +691,7 @@ function IceHub.CreateMain(gameName, subtitle)
     hexrStroke.Color = Color3.fromRGB(39, 39, 39)
     hexrStroke.Thickness = 0.8
     hexrStroke.Parent = HexR
-    developer2.Name = "Developer"
+    developer2.Name = ""
     developer2.Parent = HexR
     developer2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     developer2.BackgroundTransparency = 1
@@ -699,7 +699,7 @@ function IceHub.CreateMain(gameName, subtitle)
     developer2.Position = UDim2.new(0.424561411, 0, 0.0866539478, 0)
     developer2.Size = UDim2.new(0, 145, 0, 30)
     developer2.Font = Enum.Font.Gotham
-    developer2.Text = "HexR, Developer"
+    developer2.Text = ""
     developer2.TextColor3 = Color3.fromRGB(255, 255, 255)
     developer2.TextSize = 14
     developer2.TextWrapped = true
@@ -718,7 +718,7 @@ function IceHub.CreateMain(gameName, subtitle)
     end)
     hexrImageCorner.CornerRadius = UDim.new(0, 4)
     hexrImageCorner.Parent = hexrImage
-    xjfs.Name = "xjfs"
+    xjfs.Name = ""
     xjfs.Parent = Credits
     xjfs.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     xjfs.BackgroundTransparency = 0.4
@@ -727,7 +727,7 @@ function IceHub.CreateMain(gameName, subtitle)
     xjfs.Size = UDim2.new(0, 285, 0, 107)
     xjfsCorner.CornerRadius = UDim.new(0, 4)
     xjfsCorner.Parent = xjfs
-    description3.Name = "Description"
+    description3.Name = ""
     description3.Parent = xjfs
     description3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     description3.BackgroundTransparency = 1
@@ -735,7 +735,7 @@ function IceHub.CreateMain(gameName, subtitle)
     description3.Position = UDim2.new(0.424561411, 0, 0.744000077, 0)
     description3.Size = UDim2.new(0, 150, 0, 19)
     description3.Font = Enum.Font.SourceSans
-    description3.Text = "Discord: xjfs"
+    description3.Text = ""
     description3.TextColor3 = Color3.fromRGB(255, 255, 255)
     description3.TextSize = 16
     description3.TextWrapped = true
@@ -745,7 +745,7 @@ function IceHub.CreateMain(gameName, subtitle)
     xjfsStroke.Color = Color3.fromRGB(39, 39, 39)
     xjfsStroke.Thickness = 0.8
     xjfsStroke.Parent = xjfs
-    developer3.Name = "Developer"
+    developer3.Name = ""
     developer3.Parent = xjfs
     developer3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     developer3.BackgroundTransparency = 1
@@ -753,7 +753,7 @@ function IceHub.CreateMain(gameName, subtitle)
     developer3.Position = UDim2.new(0.424561411, 0, 0.0866539478, 0)
     developer3.Size = UDim2.new(0, 145, 0, 30)
     developer3.Font = Enum.Font.Gotham
-    developer3.Text = "xjfs, Developer"
+    developer3.Text = ""
     developer3.TextColor3 = Color3.fromRGB(255, 255, 255)
     developer3.TextSize = 14
     developer3.TextWrapped = true
