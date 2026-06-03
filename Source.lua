@@ -306,6 +306,7 @@ function IceHub.CreateMain(gameName, subtitle)
     MenuPage.CanvasSize = UDim2.new(0, 0, 2.9, 0)
     MenuPage.ScrollBarThickness = 0
     MenuPage.Visible = true
+    MenuPage.ScrollingEnabled = false
     MenuPage.ScrollingDirection = Enum.ScrollingDirection.Y
     table.insert(activePages, MenuPage)
     menuPageLayout.Parent = MenuPage
