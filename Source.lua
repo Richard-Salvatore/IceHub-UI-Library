@@ -1471,6 +1471,56 @@ function IceHub.CreateMain(gameName, subtitle)
                             end)
                             newTabPage.CanvasSize = UDim2.new(0, 0, 0, tabPageLayout.AbsoluteContentSize.Y + 5)
                         end,
+                        
+                        NewParagraph = function(_, options)
+                            local titleText = options.Title or ""
+                            local contentText = options.Content or ""
+                            local paragraphFrame = Instance.new("TextButton")
+                            local paragraphCorner = Instance.new("UICorner")
+                            local paragraphStroke = Instance.new("UIStroke")
+                            local titleLabel = Instance.new("TextLabel")
+                            local contentLabel = Instance.new("TextLabel")
+                            paragraphFrame.Name = "cParagraph"
+                            paragraphFrame.Parent = newTabPage
+                            paragraphFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+                            paragraphFrame.BackgroundTransparency = 0.2
+                            paragraphFrame.BorderColor3 = Color3.fromRGB(20, 20, 20)
+                            paragraphFrame.Size = UDim2.new(0, 295, 0, 65)
+                            paragraphFrame.AutoButtonColor = false
+                            paragraphFrame.Text = ""
+                            paragraphCorner.CornerRadius = UDim.new(0, 4)
+                            paragraphCorner.Parent = paragraphFrame
+                            paragraphStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+                            paragraphStroke.Color = Color3.fromRGB(49, 49, 49)
+                            paragraphStroke.Transparency = 0.2
+                            paragraphStroke.Parent = paragraphFrame
+                            titleLabel.Name = "Title"
+                            titleLabel.Parent = paragraphFrame
+                            titleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                            titleLabel.BackgroundTransparency = 1
+                            titleLabel.Position = UDim2.new(0, 10, 0, 6)
+                            titleLabel.Size = UDim2.new(0, 275, 0, 15)
+                            titleLabel.Font = Enum.Font.GothamBold
+                            titleLabel.Text = titleText
+                            titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                            titleLabel.TextSize = 13
+                            titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+                            contentLabel.Name = "Content"
+                            contentLabel.Parent = paragraphFrame
+                            contentLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                            contentLabel.BackgroundTransparency = 1
+                            contentLabel.Position = UDim2.new(0, 10, 0, 24)
+                            contentLabel.Size = UDim2.new(0, 275, 0, 35)
+                            contentLabel.Font = Enum.Font.Gotham
+                            contentLabel.Text = contentText
+                            contentLabel.TextColor3 = Color3.fromRGB(170, 170, 170)
+                            contentLabel.TextSize = 12
+                            contentLabel.TextWrapped = true
+                            contentLabel.TextXAlignment = Enum.TextXAlignment.Left
+                            contentLabel.TextYAlignment = Enum.TextYAlignment.Top
+                            newTabPage.CanvasSize = UDim2.new(0, 0, 0, tabPageLayout.AbsoluteContentSize.Y + 5)
+                        end,
+
                         NewSmall = function(_, buttonText, callback)
                             local smallButton = Instance.new("TextButton")
                             local smallButtonCorner = Instance.new("UICorner")
