@@ -438,7 +438,7 @@ function IceHub.CreateMain(gameName, subtitle)
     Discord.Size = UDim2.new(0, 155, 0, 30)
     Discord.AutoButtonColor = false
     Discord.Font = Enum.Font.SourceSans
-    Discord.Text = "Join discord"
+    Discord.Text = "Join Discord"
     Discord.TextColor3 = Color3.fromRGB(255, 255, 255)
     Discord.TextSize = 14
     Discord.MouseButton1Click:Connect(function()
@@ -1471,7 +1471,7 @@ function IceHub.CreateMain(gameName, subtitle)
                             end)
                             newTabPage.CanvasSize = UDim2.new(0, 0, 0, tabPageLayout.AbsoluteContentSize.Y + 5)
                         end,
-                        
+
                         NewParagraph = function(_, options)
                             local titleText = options.Title or ""
                             local contentText = options.Content or ""
